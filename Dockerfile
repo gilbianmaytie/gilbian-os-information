@@ -14,16 +14,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go application
-RUN CGO_ENABLED=0 GOOS=linux go build -o gilbian-os-information .
-
-# Start a new stage from scratch
-FROM alpine:latest
-
-# Set the current working directory inside the container
-WORKDIR /root/
-
-# Copy the built executable from the previous stage
-COPY --from=builder /app/gilbian-os-information .
+RUN go build -o gilbian-os-information .
 
 # Expose port 8080 (optional)
 EXPOSE 8080
