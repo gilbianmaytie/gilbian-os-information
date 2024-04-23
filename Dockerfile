@@ -14,4 +14,4 @@ RUN go build -o gilbian-os-information .
 EXPOSE 8080
 
 # Command to run the executable
-CMD ["./simple-golang-app"]
+CMD ["./gilbian-os-information"]
