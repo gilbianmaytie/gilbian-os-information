@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gilbian-os-information
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gilbian-os-information
+  template:
+    metadata:
+      labels:
+        app: gilbian-os-information
+    spec:
+      containers:
+      - name: gilbian-os-information
+        image: gilbianmaytie/gilbian-os-information:latest
+        ports:
+        - containerPort: 8080
