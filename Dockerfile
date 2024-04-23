@@ -6,7 +6,6 @@ WORKDIR /app
 
 # Copy the Go module files to the container
 COPY go.mod .
-COPY go.sum .
 
 # Download and install Go dependencies
 RUN go mod download
